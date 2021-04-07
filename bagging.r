@@ -3,7 +3,7 @@ library(e1071)
 library(tree)
 library(randomForest)
 # Reading the shells dataset
-shells <- read.csv("C:/Users/lenovo/Downloads/shells.csv")
+shells <- read_xlsx(file.choose())
 # Storing the number of folds
 k=10
 n=floor(nrow(shells)/k)
