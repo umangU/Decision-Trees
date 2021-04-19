@@ -26,8 +26,7 @@ for(i in 1:k)
  shells.test=shells[-train,"Age"]
  
  # Fitting the Boosting Model
- boost.shells=gbm(Age~.,data=shells[train,], distribution="gaussian",
-n.trees=5000, interaction.depth=4, shrinkage=0.2, verbose=F)
+ boost.shells=gbm(Age~.,data=shells[train,], distribution="gaussian", n.trees=5000, interaction.depth=4, shrinkage=0.2, verbose=F)
  yhat.shells=predict(boost.shells, newdata=shells[-train,], n.trees =5000)
  
  # Storing and Printing the test error for each fold
