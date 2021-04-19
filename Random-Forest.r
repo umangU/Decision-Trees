@@ -14,6 +14,7 @@ i=1
 # Creating a vector to store the error values
 ts_err=vector(,k)
 
+# Looping through the 10 folds
 for(i in 1:k)
 {
  
@@ -25,8 +26,7 @@ for(i in 1:k)
  shells.test=shells[-train,"Age"]
  
  # Fitting the random forest model
- rf.shells=randomForest(Age~.,data=shells ,subset=train, mtry=3, importance
-=TRUE)
+ rf.shells=randomForest(Age~.,data=shells ,subset=train, mtry=3, importance=TRUE)
  yhat.rf = predict(rf.shells, newdata=shells[-train,])
  
  # Storing and printing the test errors for each fold
