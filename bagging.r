@@ -1,31 +1,31 @@
-# Importing the required libraries
+#Importing the required libraries
 library(e1071)
 library(tree)
 library(randomForest)
 
-# Reading the shells dataset
+#Reading the shells dataset
 shells <- read_xlsx(file.choose())
 
-# Storing the number of folds
+#Storing the number of folds
 k=10
 n=floor(nrow(shells)/k)
 i=1
 
-# Creating a vector to store the error values
+#Creating a vector to store the error values
 ts_err=vector(,k)
 
-# Looping through the k-folds
+#Looping through the k-folds
 for(i in 1:k)
 {
  
- # Spliting the dataset into training and testing dataset
+ #Spliting the dataset into training and testing dataset
  s1=((i-1)*n+1)
  s2=(i*n)
  train=sample(s1:s2)
  shells.train=shells[train,]
  shells.test=shells[-train,"Age"]
  
- # Fitting the Bagging Model
+ #Fitting the Bagging Model
  rf.shells=randomForest(Age~.,data=shells ,subset=train, mtry=3, ntree=25)
  
  # Making predictions for the testing dataset
