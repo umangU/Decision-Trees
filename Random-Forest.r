@@ -3,7 +3,7 @@ library(e1071)
 library(tree)
 library(randomForest)
 
-# Reading the shells dataset
+#Reading the shells dataset
 shells <- read_xlsx(file.choose())
 
  Storing the number of folds
@@ -11,7 +11,7 @@ k=10
 n=floor(nrow(shells)/k)
 i=1
 
-#Creating a vector to store the error values
+# reating a vector to store the error values
 ts_err=vector(,k)
 
 # Looping through the 10 folds
