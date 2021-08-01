@@ -11,7 +11,7 @@ k=10
 n=floor(nrow(shells)/k)
 i=1
 
-#reating a vector to store the error values
+# reating a vector to store the error values
 ts_err=vector(,k)
 
 # Looping through the 10 folds
