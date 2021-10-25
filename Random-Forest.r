@@ -25,7 +25,7 @@ for(i in 1:k)
  shells.train=shells[train,]
  shells.test=shells[-train,"Age"]
  
- #Fitting the random forest model
+ # Fitting the random forest model
  rf.shells=randomForest(Age~.,data=shells ,subset=train, mtry=3, importance=TRUE)
  yhat.rf = predict(rf.shells, newdata=shells[-train,])
  
