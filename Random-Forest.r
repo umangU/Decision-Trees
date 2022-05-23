@@ -14,7 +14,7 @@ i=1
 # Creating a vector to store the error values
 ts_err=vector(,k)
 
-# Looping through the 10 folds
+#Looping through the 10 folds
 for(i in 1:k)
 {
  
